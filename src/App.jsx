@@ -6,6 +6,7 @@ import Profile from "./pages/Profile";
 import { ThemeProvider } from "./Context/ThemeContext"; // Ensure this exists
 import { createTheme } from "@mui/material/styles"; // MUI Theme
 import CssBaseline from "@mui/material/CssBaseline"; // Resets default styles\
+import Dashboard from "./pages/Dashboard";
 
 // Create MUI Theme (Modify as needed)
 const theme = createTheme({
@@ -31,6 +32,8 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+
           </Routes>
         </div>
       </Router>

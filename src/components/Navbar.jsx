@@ -88,24 +88,21 @@ function Navbar() {
             </ul>
 
             <div className="flex gap-4 items-center">
-                <button
-                    className={`p-2 rounded-full border-2 border-black text-black`}
-                    onClick={toggleTheme}
-                >
-                    {theme === 'dark' ? <FaSun /> : <FaMoon />}
-                </button>
+    <button
+        className={`p-2 rounded-full border-2 border-black text-black`}
+        onClick={toggleTheme}
+    >
+        {theme === 'dark' ? <FaSun /> : <FaMoon />}
+    </button>
 
-                {!isLoggedIn && (
-                    <>
-                        <span className="cursor-pointer text-lg font-bold hover:text-[#E2511A]">
-                            <Link to='/signup'>Sign Up</Link>
-                        </span>
-                        <span className="cursor-pointer text-lg font-bold hover:text-[#E2511A]">
-                            <Link to='/login'>Login</Link>
-                        </span>
-                    </>
-                )}
-            </div>
+    <span className="cursor-pointer text-lg font-bold hover:text-[#E2511A]">
+        <Link to='/signup'>Sign Up</Link>
+    </span>
+    <span className="cursor-pointer text-lg font-bold hover:text-[#E2511A]">
+        <Link to='/login'>Login</Link>
+    </span>
+</div>
+
         </div>
     );
 }

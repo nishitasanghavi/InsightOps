@@ -17,7 +17,6 @@ function LandingPage() {
   className={`transition-all duration-300 ease-in-out flex flex-col min-h-screen w-full overflow-hidden
   ${theme === 'dark' ? 'bg-[#000000] text-[#CCCCCC]' : 'bg-[#C9D7E4] text-[#2F4D6F]'}`}
 >
-
       {/* Navigation */}
       <Navbar />
       <Sidenav />

@@ -47,7 +47,7 @@ function Community() {
             {/* Call to Action */}
             <div className="text-center mt-12">
                 <a
-                    href="/community"
+                    href="/signup"
                     className="bg-[#E2511A] text-white font-bold text-lg px-6 py-3 rounded-full shadow-lg hover:bg-[#CC4400] transition"
                 >
                     Join the Community
