@@ -45,7 +45,7 @@ function ChatList({ select, setSelect, setShowChat, page, handlepage }) {
 
     const DrawerList = (
         <Box
-            sx={{ width: 250, backgroundColor: theme === 'dark' ? '#089451':'black', height: '100%' }}
+            sx={{ width: 250, backgroundColor: theme === 'dark' ? '#E2511A':'black', height: '100%' }}
             role="presentation"
             onClick={toggleDrawer(false)}
             onKeyDown={toggleDrawer(false)}
@@ -84,7 +84,7 @@ function ChatList({ select, setSelect, setShowChat, page, handlepage }) {
                 <input
                     type="text"
                     placeholder="Search..."
-                    className={`${theme === 'dark' ? 'bg-[#323233]' : ''} w-full p-3 pl-10 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#089451] focus:border-transparent`}
+                    className={`${theme === 'dark' ? 'bg-[#323233]' : ''} w-full p-3 pl-10 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#E2511A] focus:border-transparent`}
                 />
                 <FaSearch className="absolute left-12 md:left-3 top-[35%] text-gray-500" />
             </div>
