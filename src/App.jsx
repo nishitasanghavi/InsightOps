@@ -1,19 +1,38 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import './App.css';
+import LandingPage from "./pages/LandingPage";
+import { ThemeProvider } from "./Context/ThemeContext"; // Ensure this exists
+import { createTheme } from "@mui/material/styles"; // MUI Theme
+import CssBaseline from "@mui/material/CssBaseline"; // Resets default styles\
+
+// Create MUI Theme (Modify as needed)
+const theme = createTheme({
+  palette: {
+    mode: "light", // Change to 'dark' if needed
+    primary: {
+      main: "#1976d2",
+    },
+    secondary: {
+      main: "#dc004e",
+    },
+  },
+});
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-        </Routes>
-      </div>
-    </Router>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Router>
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+          </Routes>
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }
 
