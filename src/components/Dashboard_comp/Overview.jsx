@@ -2,7 +2,7 @@ import { faBell, faGauge } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 import React from 'react';
-import { categoryData, clients, details, paymentsData, proposalData } from '../data/OverviewData';
+import { categoryData, clients, clients2, details, paymentsData, proposalData } from '../data/OverviewData';
 import { useTheme } from '../../Context/ThemeContext';
 import { FaMoon, FaSun } from 'react-icons/fa';
 import { Box, Divider, Drawer } from '@mui/material';
@@ -10,6 +10,9 @@ import { motion } from 'framer-motion';
 import { IoMenu } from 'react-icons/io5';
 import { faCalendar, faComments, faLightbulb, faMoneyBillTrendUp, faRectangleList } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+
+
+
 
 const overview_proj = [
   {
@@ -33,7 +36,22 @@ const overview_proj = [
     deadline: 'Jan 5, 2025',
     payment: 'Pending'
   },
+  {
+    name: 'Mobile App Development',
+    client: 'XYZ Inc',
+    status: 'Completed',
+    deadline: 'Dec 15, 2024',
+    payment: 'Paid'
+  },
+  {
+    name: 'E-commerce Website',
+    client: 'Shopify Co',
+    status: 'In Progress',
+    deadline: 'Feb 20, 2025',
+    payment: 'Pending'
+  }
 ];
+
 
 const options = [
   { name: 'Overview', icon: faGauge },
@@ -70,7 +88,10 @@ const renderCustomLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent
 const Overview = ({ handlepage, page }) => {
   const { theme, toggleTheme } = useTheme();
   const [open, setOpen] = React.useState(false);
-
+  const [showNotification, setShowNotification] = React.useState(false);
+  const handleBellClick = () => {
+    setShowNotification(!showNotification);
+  };
   const toggleDrawer = (newOpen) => (event) => {
     if (
       event &&
@@ -130,7 +151,32 @@ const Overview = ({ handlepage, page }) => {
           >
             {theme === 'dark' ? <FaSun /> : <FaMoon />}
           </button>
-          <FontAwesomeIcon icon={faBell} className='text-xl hidden md:block' />
+          <FontAwesomeIcon icon={faBell} className='text-xl hidden md:block cursor-pointer' onClick={handleBellClick} />
+
+{/* Notification popup */}
+{showNotification && (
+  <div className="absolute right-10 top-16 bg-white border-2 border-gray-300 p-4 rounded-lg shadow-xl w-80">
+    <h3 className="font-bold text-lg text-[#E2511A]">Notifications</h3>
+    <ul className="mt-2">
+      <li className="p-2 border-b flex items-center gap-2">
+        <FontAwesomeIcon icon={faCalendar} className="text-[#E2511A]" />
+        <span>Deadline approaching for "Website Redesign" - Jan 5, 2025</span>
+      </li>
+      <li className="p-2 border-b flex items-center gap-2">
+        <FontAwesomeIcon icon={faMoneyBillTrendUp} className="text-[#E2511A]" />
+        <span>Payment due for "Mobile App Development" - Dec 15, 2024</span>
+      </li>
+      <li className="p-2 border-b flex items-center gap-2">
+        <FontAwesomeIcon icon={faGauge} className="text-[#2F4D6F]" />
+        <span>Status update: "E-commerce Website" - In Progress</span>
+      </li>
+    </ul>
+  </div>
+)}
+
+
+
+
           <span className='text-white font-semibold text-lg bg-gradient-to-r from-[#E2511A] to-[#E2511A] px-3 py-2 rounded-lg'>
             <Link to={'/joblisting'}>+ Explore Gigs</Link>
           </span>
@@ -252,14 +298,21 @@ const Overview = ({ handlepage, page }) => {
               </div>
             ))}
           </div>
+          <div className='w-full'>
+          <h1 className={`${theme === 'dark' ? 'text-[#CDCDCD]' : ''} font-bold text-xl mt-3 mb-2`}>Top Clients</h1>
+          <div className='flex w-full justify-between border-[2px] border-[#B2B2B2] p-2 rounded-xl'>
+            {clients2.map((item, index) => (
+              <div key={index} className='flex flex-col items-center'>
+                <img src={item.img} alt="" className='rounded-full h-16' />
+                <h1 className={`${theme === 'dark' ? 'text-[#CDCDCD]' : ''} font-bold`}>{item.name}</h1>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-        {/* Active Projects */}
+        </div>
         <div className='w-full'>
-          <h1 className={`font-bold text-lg mb-2 ${theme === 'dark' ? 'text-white' : ''}`}>Active Projects</h1>
-          <div className='w-full border-[1px] border-[#CDCDCD] px-4 rounded-lg overflow-auto'>
+          <h1 className={`font-bold text-xl mb-2 ${theme === 'dark' ? 'text-white' : ''}`}>Active Projects</h1>
+          <div className='w-full border-[2px] border-[#B2B2B2] px-4 py-1 rounded-lg overflow-auto'>
             <table className='w-full border-spacing-y-2' style={{ borderCollapse: 'separate', borderSpacing: '0 15px' }}>
               <thead>
                 <tr className='text-left'>
@@ -283,6 +336,7 @@ const Overview = ({ handlepage, page }) => {
               </tbody>
             </table>
           </div>
+
         </div>
       </div>
     </div>
