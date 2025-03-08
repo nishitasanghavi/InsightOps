@@ -45,8 +45,8 @@ function Chats({ select, setShowChat }) {
                         >
                             {theme === 'dark' ? <FaSun /> : <FaMoon />}
                         </button>
-                        <FaPhoneAlt className={`size-6 text-black ${theme === 'dark' ? 'text-white' : ''}`} />
-                        <CiMenuKebab className={`size-7 text-black ${theme === 'dark' ? 'text-white' : ''}`} />
+                        <FaPhoneAlt className={`size-6 ${theme === 'dark' ? 'text-white' : 'text-black'}`} />
+                        <CiMenuKebab className={`size-7 ${theme === 'dark' ? 'text-white' : 'text-black'}`} />
                     </div>
                 </motion.div>
 
@@ -68,14 +68,13 @@ function Chats({ select, setShowChat }) {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.3, delay: index * 0.1 }}
                             >
-                                <div className={`relative w-[70%] md:w-[40%] p-4 rounded-xl text-white font-semibold ${temp ? 'bg-[#FFA500]' : 'bg-[#089451]'} shadow-[0_4px_8px_rgba(0,0,0,0.5)]`}>
+                                <div className={`relative w-[70%] md:w-[40%] p-4 rounded-xl text-white font-semibold ${temp ? 'bg-[#E2511A]' : 'bg-[#080808]'} shadow-[0_4px_8px_rgba(0,0,0,0.5)]`}>
                                     {!temp && <img src={chatlistdata[select]['image']} alt="" className={`absolute -top-[17%] ${temp ? '-right-[5%]' : '-left-[5%]'} rounded-full h-10`} />}
                                     {temp && <img src={`images/yashavatar.png`} alt="" className={`absolute -top-[17%] ${temp ? '-right-[5%]' : '-left-[5%]'} rounded-full h-10`} />}
-
                                     {temp && item.me}
                                     {!temp && item.contact}
                                 </div>
-                                <span className={`px-4 ${theme === 'dark' ? 'text-white' : ''}`}>{item.time}</span>
+                                <span className={`px-4 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>{item.time}</span>
                             </motion.div>
                         );
                     })}
@@ -85,16 +84,16 @@ function Chats({ select, setShowChat }) {
 
             <div className="flex items-center md:p-4 w-full p-2 justify-between">
                 <div className="flex items-center md:w-[70%] md:gap-7">
-                    <FaSmile className="text-gray-500 mr-3 cursor-pointer size-5" />
+                    <FaSmile className="text-[#CCCCCC] mr-3 cursor-pointer size-5" />
                     <input
                         type="text"
                         placeholder="Type a message...."
-                        className="py-2 px-5 flex-grow rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#089451]"
+                        className="py-2 px-5 flex-grow rounded-full border border-[#CCCCCC] focus:outline-none focus:ring-2 focus:ring-[#089451]"
                     />
                 </div>
                 <div className="flex items-center md:gap-5">
-                    <FaMicrophone className="text-[#C7D0D8] mx-3 cursor-pointer" size={24} />
-                    <FaCamera className="text-[#C7D0D8] cursor-pointer" size={24} />
+                    <FaMicrophone className="text-[#CCCCCC] mx-3 cursor-pointer" size={24} />
+                    <FaCamera className="text-[#CCCCCC] cursor-pointer" size={24} />
                 </div>
             </div>
         </div>
