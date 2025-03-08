@@ -60,23 +60,22 @@ function Signup() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-100 via-white to-orange-100 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 via-white to-blue-100 px-4">
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
         className="bg-white shadow-2xl rounded-3xl w-full max-w-4xl flex overflow-hidden"
       >
-        <div className="w-1/2 bg-gradient-to-b from-green-500 to-green-700 text-white p-10 hidden md:flex flex-col justify-center">
+        <div className="w-1/2 bg-[#000000] text-white p-10 hidden md:flex flex-col justify-center">
           <h1 className="text-4xl font-extrabold mb-4">
             What Our Jobkeepers Say
           </h1>
           <p className="text-lg leading-relaxed mb-4">
-            "Searching and finding your dream job is now easier than ever. Just
-            browse a job and apply if you need to."
+            ""Identifying and managing business operations efficiently has never been easier. Our platform helps you streamline tasks and enhance productivity effortlessly.""
           </p>
           <p className="font-bold">- Nishita Sanghavi</p>
-          <p className="text-sm italic">UI Designer at Google</p>
+          <p className="text-sm italic">Business Operations Manager at Google</p>
         </div>
 
         <motion.div
@@ -88,7 +87,7 @@ function Signup() {
           <h2 className="text-3xl font-bold text-black mb-6">Sign Up</h2>
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-black">
+              <label htmlFor="name" className="block text-sm font-medium text-black text-left pl-1">
                 Name
               </label>
               <input
@@ -102,7 +101,7 @@ function Signup() {
               {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-black">
+              <label htmlFor="email" className="block text-sm font-medium text-black text-left pl-1">
                 Email Address
               </label>
               <input
@@ -116,7 +115,7 @@ function Signup() {
               {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
             </div>
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-black">
+              <label htmlFor="password" className="block text-sm font-medium text-black text-left pl-1">
                 Password
               </label>
               <input
@@ -133,7 +132,7 @@ function Signup() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               type="submit"
-              className="w-full py-3 bg-orange-500 text-white rounded-lg font-semibold hover:bg-orange-600"
+              className="w-full py-3 bg-[#E2511A] text-white rounded-lg font-semibold hover:bg-orange-600"
             >
               Create Account
             </motion.button>
