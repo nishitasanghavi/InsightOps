@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaDollarSign, FaPiggyBank, FaRegCalendarAlt, FaRegMoneyBillAlt, FaCheckCircle, FaExclamationTriangle } from 'react-icons/fa';
 import { BsFillBrightnessHighFill, BsFillBrightnessLowFill } from 'react-icons/bs';
+import { motion } from 'framer-motion'; // Import framer-motion
 
 const FinancialHealthScore = () => {
   const [monthlyIncome, setMonthlyIncome] = useState(0);
@@ -141,7 +142,12 @@ const FinancialHealthScore = () => {
       {/* Earnings from Other Platforms Section */}
 
       {/* Display Financial Health Score */}
-      <div className="bg-[#CCCCCC] p-6 rounded-lg mb-6">
+      <motion.div
+        className="bg-[#CCCCCC] p-6 rounded-lg mb-6"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         <h2 className="text-2xl font-bold text-[#000000] mb-4">
           Your Financial Health Score: {overallScore.toFixed(1)}/100
         </h2>
@@ -157,7 +163,7 @@ const FinancialHealthScore = () => {
         <p className="text-[#000000]">
           Total Earnings from Platforms: ${totalPlatformEarnings.toFixed(2)}
         </p>
-      </div>
+      </motion.div>
 
       {/* Tips Section */}
       <div className="bg-[#E2511A] p-6 rounded-lg">
@@ -169,10 +175,17 @@ const FinancialHealthScore = () => {
           <li>Look for stable income sources if your income is irregular.</li>
         </ul>
       </div>
+      
       <div className="mb-8">
         <h2 className="text-2xl font-bold text-[#000000] mt-7 mb-4">Earnings from Other Platforms</h2>
         {platformEarnings.map((platform, index) => (
-          <div key={index} className="flex gap-4 mb-4">
+          <motion.div
+            key={index}
+            className="flex gap-4 mb-4 bg-[#f9f9f9] p-4 rounded-lg shadow-md"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
             <div className="w-full">
               <label className="block text-sm font-medium text-[#000000]">Platform Name</label>
               <input
@@ -199,7 +212,7 @@ const FinancialHealthScore = () => {
             >
               Remove
             </button>
-          </div>
+          </motion.div>
         ))}
         <button
           onClick={handleAddPlatformEarnings}
