@@ -71,7 +71,7 @@ function MyBiddings({ handlepage, page }) {
 
     const DrawerList = (
         <Box
-            sx={{ width: 250, backgroundColor: theme === 'dark' ? '#089451':'black', height: '100%' }}
+            sx={{ width: 250, backgroundColor: theme === 'dark' ? '#E2511A':'black', height: '100%' }}
             role="presentation"
             onClick={toggleDrawer(false)}
             onKeyDown={toggleDrawer(false)}
@@ -130,7 +130,11 @@ function MyBiddings({ handlepage, page }) {
                     <Drawer anchor="left" open={open} onClose={toggleDrawer(false)}>
                         {DrawerList}
                     </Drawer>
-                    <img src="/images/yashavatar.png" alt="Avatar" className='rounded-full h-10' />
+                    <img 
+    src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg"  
+    alt="Avatar" 
+    className='rounded-full h-10' 
+/>
                     <h1 className='text-2xl font-bold hidden md:block'>Yash Rawat</h1>
                 </div>
                 <div className='flex items-center gap-4 md:w-[30%] justify-evenly'>
@@ -141,11 +145,11 @@ function MyBiddings({ handlepage, page }) {
                         {theme === 'dark' ? <FaSun /> : <FaMoon />}
                     </button>
                     <FontAwesomeIcon icon={faBell} className='text-xl hidden md:block' />
-                    <span className='text-white font-semibold text-lg bg-gradient-to-r from-[#40AB7A] to-[#0A673B] px-3 py-2 rounded-lg'><Link to={'/joblisting'}>+ Find a Job</Link></span>
+                    <span className='text-white font-semibold text-lg bg-[#E2511A] px-3 py-2 rounded-lg'><Link to={'/joblisting'}>+ Explore Gigs</Link></span>
                 </div>
             </div>
 
-            <h1 className={`${theme === 'dark' ? 'text-white' : 'text-[#2a5243]'}  text-4xl font-bold mb-2 mt-7`}>My Biddings</h1>
+            <h1 className={`${theme === 'dark' ? 'text-white' : 'text-[#000000]'}  text-4xl font-bold mb-2 mt-7`}>My Biddings</h1>
             <p className='text-[#757575] text-lg font-semibold mb-5'>Manage your ongoing and completed work in one place.</p>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <Tabs
@@ -160,14 +164,14 @@ function MyBiddings({ handlepage, page }) {
                             height: "4px"
                         },
                         "& .MuiTabScrollButton-root": {
-                            color: "#089451"
+                            color: "#E2511A"
                         }
                     }}
                 >
-                    <Tab label="All Biddings" {...a11yProps(0)} style={{ color: '#089451', fontWeight: 'bold' }} />
-                    <Tab label="Pending Biddings" {...a11yProps(1)} style={{ color: '#089451', fontWeight: 'bold' }} />
-                    <Tab label="Accepted Biddings" {...a11yProps(2)} style={{ color: '#089451', fontWeight: 'bold' }} />
-                    <Tab label="Rejected Biddings" {...a11yProps(3)} style={{ color: '#089451', fontWeight: 'bold' }} />
+                    <Tab label="All Biddings" {...a11yProps(0)} style={{ color: '#00000099', fontWeight: 'bold' }} />
+                    <Tab label="Pending Biddings" {...a11yProps(1)} style={{ color: '#00000099', fontWeight: 'bold' }} />
+                    <Tab label="Accepted Biddings" {...a11yProps(2)} style={{ color: '#00000099', fontWeight: 'bold' }} />
+                    <Tab label="Rejected Biddings" {...a11yProps(3)} style={{ color: '#00000099', fontWeight: 'bold' }} />
                 </Tabs>
             </Box>
 
@@ -184,7 +188,7 @@ function MyBiddings({ handlepage, page }) {
                 >
                     {myBiddings.map((item) => (
                         <div className='rounded-lg'>
-                            <div className={`${item.status === 'Accepted' ? 'bg-[#089451]' : ''}  
+                            <div className={`${item.status === 'Accepted' ? 'bg-[#E2511A]' : ''}  
                                 ${item.status === 'Rejected' ? 'bg-[#949494]' : ''} 
                                 ${item.status === 'Pending' ? (theme === 'dark' ? 'bg-white' : 'bg-black') : ''} 
                                 rounded-lg py-4 px-5 h-80 flex flex-col justify-around`}>
@@ -205,7 +209,7 @@ function MyBiddings({ handlepage, page }) {
                                     rounded-xl w-fit px-2 py-1 text-xs`}>{item.status}</span>
                                 </div>
                                 <div className={`
-                                    ${item.status === 'Accepted' ? 'bg-[#88CBAB]' : ''}  
+                                    ${item.status === 'Accepted' ? 'bg-[#FB9256]' : ''}  
                                     ${item.status === 'Rejected' ? ' bg-[#CCCCCC]' : ''} 
                                     ${item.status === 'Pending' ? (theme === 'dark' ? 'bg-[#CCCCCC]' : 'bg-[#858585]') : ''} 
                                     p-1 px-2 rounded-lg line-clamp-3 font-medium ${theme === 'dark' && item.status === 'Pending' ? '' : 'text-black'} `}>{item.freelancerDescription}</div>
@@ -228,7 +232,7 @@ function MyBiddings({ handlepage, page }) {
                     {myBiddings.map((item) => {
                         if (item.status === 'Pending') {
                             return <div className='rounded-lg'>
-                            <div className={`${item.status === 'Accepted' ? 'bg-[#089451]' : ''}  
+                            <div className={`${item.status === 'Accepted' ? 'bg-[#E2511A]' : ''}  
                                 ${item.status === 'Rejected' ? 'bg-[#949494]' : ''} 
                                 ${item.status === 'Pending' ? (theme === 'dark' ? 'bg-white' : 'bg-black') : ''} 
                                 rounded-lg py-4 px-5 h-80 flex flex-col justify-around`}>
@@ -249,7 +253,7 @@ function MyBiddings({ handlepage, page }) {
                                     rounded-xl w-fit px-2 py-1 text-xs`}>{item.status}</span>
                                 </div>
                                 <div className={`
-                                    ${item.status === 'Accepted' ? 'bg-[#88CBAB]' : ''}  
+                                    ${item.status === 'Accepted' ? 'bg-[#FB9256]' : ''}  
                                     ${item.status === 'Rejected' ? ' bg-[#CCCCCC]' : ''} 
                                     ${item.status === 'Pending' ? (theme === 'dark' ? 'bg-[#CCCCCC]' : 'bg-[#858585]') : ''} 
                                     p-1 px-2 rounded-lg line-clamp-3 font-medium ${theme === 'dark' && item.status === 'Pending' ? '' : 'text-black'} `}>{item.freelancerDescription}</div>
@@ -274,7 +278,7 @@ function MyBiddings({ handlepage, page }) {
                     {myBiddings.map((item) => {
                         if (item.status === 'Accepted') {
                             return <div className='rounded-lg'>
-                            <div className={`${item.status === 'Accepted' ? 'bg-[#089451]' : ''}  
+                            <div className={`${item.status === 'Accepted' ? 'bg-[#E2511A]' : ''}  
                                 ${item.status === 'Rejected' ? 'bg-[#949494]' : ''} 
                                 ${item.status === 'Pending' ? (theme === 'dark' ? 'bg-white' : 'bg-black') : ''} 
                                 rounded-lg py-4 px-5 h-80 flex flex-col justify-around`}>
@@ -295,7 +299,7 @@ function MyBiddings({ handlepage, page }) {
                                     rounded-xl w-fit px-2 py-1 text-xs`}>{item.status}</span>
                                 </div>
                                 <div className={`
-                                    ${item.status === 'Accepted' ? 'bg-[#88CBAB]' : ''}  
+                                    ${item.status === 'Accepted' ? 'bg-[#FB9256]' : ''}  
                                     ${item.status === 'Rejected' ? ' bg-[#CCCCCC]' : ''} 
                                     ${item.status === 'Pending' ? (theme === 'dark' ? 'bg-[#CCCCCC]' : 'bg-[#858585]') : ''} 
                                     p-1 px-2 rounded-lg line-clamp-3 font-medium ${theme === 'dark' && item.status === 'Pending' ? '' : 'text-black'} `}>{item.freelancerDescription}</div>
@@ -320,7 +324,7 @@ function MyBiddings({ handlepage, page }) {
                     {myBiddings.map((item) => {
                         if (item.status === 'Rejected') {
                             return <div className='rounded-lg'>
-                            <div className={`${item.status === 'Accepted' ? 'bg-[#089451]' : ''}  
+                            <div className={`${item.status === 'Accepted' ? 'bg-[#E2511A]' : ''}  
                                 ${item.status === 'Rejected' ? 'bg-[#949494]' : ''} 
                                 ${item.status === 'Pending' ? (theme === 'dark' ? 'bg-white' : 'bg-black') : ''} 
                                 rounded-lg py-4 px-5 h-80 flex flex-col justify-around`}>
@@ -341,7 +345,7 @@ function MyBiddings({ handlepage, page }) {
                                     rounded-xl w-fit px-2 py-1 text-xs`}>{item.status}</span>
                                 </div>
                                 <div className={`
-                                    ${item.status === 'Accepted' ? 'bg-[#88CBAB]' : ''}  
+                                    ${item.status === 'Accepted' ? 'bg-[#FB9256]' : ''}  
                                     ${item.status === 'Rejected' ? ' bg-[#CCCCCC]' : ''} 
                                     ${item.status === 'Pending' ? (theme === 'dark' ? 'bg-[#CCCCCC]' : 'bg-[#858585]') : ''} 
                                     p-1 px-2 rounded-lg line-clamp-3 font-medium ${theme === 'dark' && item.status === 'Pending' ? '' : 'text-black'} `}>{item.freelancerDescription}</div>

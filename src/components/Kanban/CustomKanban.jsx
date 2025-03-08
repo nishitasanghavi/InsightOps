@@ -88,7 +88,11 @@ export const CustomKanban = ({ handlepage, page }) => {
                     <Drawer anchor="left" open={open} onClose={toggleDrawer(false)}>
                         {DrawerList}
                     </Drawer>
-                    <img src="/images/yashavatar.png" alt="Avatar" className='rounded-full h-10' />
+                    <img 
+    src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg"  
+    alt="Avatar" 
+    className='rounded-full h-10' 
+/>
                     <h1 className='text-2xl font-bold hidden md:block'>Yash Rawat</h1>
                 </div>
                 <div className='flex items-center gap-4 md:w-[30%] justify-evenly'>
@@ -99,7 +103,7 @@ export const CustomKanban = ({ handlepage, page }) => {
                         {theme === 'dark' ? <FaSun /> : <FaMoon />}
                     </button>
                     <FontAwesomeIcon icon={faBell} className='text-xl hidden md:block' />
-                    <span className='text-white font-semibold text-lg bg-gradient-to-r from-[#40AB7A] to-[#0A673B] px-3 py-2 rounded-lg'><Link to={'/joblisting'}>+ Find a Job</Link></span>
+                    <span className='text-white font-semibold text-lg bg-[#E2511A] px-3 py-2 rounded-lg'><Link to={'/joblisting'}>+ Explore Gigs</Link></span>
                 </div>
             </div>
             <Board cards={cards} setCards={setCards} />
