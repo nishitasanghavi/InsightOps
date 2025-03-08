@@ -15,6 +15,21 @@ export const paymentsData = [
     { month: 'December', gigCount: 80 },
 ];
 
+export const paymentsData2 = [
+  { month: 'January', revenue: 1500 },
+  { month: 'February', revenue: 2000 },
+  { month: 'March', revenue: 2500 },
+  { month: 'April', revenue: 3000 },
+  { month: 'May', revenue: 3500 },
+  { month: 'June', revenue: 4000 },
+  { month: 'July', revenue: 5000 },
+  { month: 'August', revenue: 4500 },
+  { month: 'September', revenue: 5500 },
+  { month: 'October', revenue: 6000 },
+  { month: 'November', revenue: 7000 },
+  { month: 'December', revenue: 8000 },
+];
+
 export const proposalData = [
     { name: 'Hired', value: 78, color: '#E2511A' },  // Hired in Orange
     { name: 'Pending', value: 12, color: '#CCCCCC' }, // Pending in Grey
