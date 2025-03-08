@@ -26,14 +26,17 @@ function Navbar() {
 
     return (
         <div className={`fixed top-0 left-0 z-50 w-full flex items-center justify-between p-4
-        ${theme === 'dark' ? 'bg-[#000000] text-white' : 'bg-[#C9D7E4] text-black'}
-        backdrop-blur-md shadow-lg rounded-lg transition-all duration-300`}>
+        bg-white text-black backdrop-blur-md shadow-lg rounded-lg transition-all duration-300`}>
 
-            <img src="/images/logo.jpeg" alt="Logo" className="h-10 rounded-xl" />
+<div className="flex items-center gap-2">
+    <img src="/images/logo.png" alt="Gig Hub Logo" className="h-15 rounded-xl" />
+    <span className="text-2xl font-bold text-[#E2511A]">Gignite</span>
+</div>
+
 
             <ul className="hidden sm:flex gap-6 font-semibold">
                 <li
-                    className={`cursor-pointer text-lg hover:text-[#98B1C5] ${selectedLink === 'home' ? 'border-b-2 border-[#E2511A]' : ''}`}
+                    className={`cursor-pointer text-lg hover:text-[#E2511A] ${selectedLink === 'home' ? 'border-b-2 border-[#E2511A]' : ''}`}
                     onClick={() => handleLinkClick('home')}
                 >
                     <Link to='/'>Home</Link>
@@ -42,43 +45,43 @@ function Navbar() {
                 {isLoggedIn ? (
                     <>
                         <li
-                            className={`cursor-pointer text-lg hover:text-[#98B1C5] ${selectedLink === 'dashboard' ? 'border-b-2 border-[#E2511A]' : ''}`}
+                            className={`cursor-pointer text-lg hover:text-[#E2511A] ${selectedLink === 'dashboard' ? 'border-b-2 border-[#E2511A]' : ''}`}
                             onClick={() => handleLinkClick('dashboard')}
                         >
                             <Link to='/dashboard'>Dashboard</Link>
                         </li>
                         <li
-                            className={`cursor-pointer text-lg hover:text-[#98B1C5] ${selectedLink === 'joblisting' ? 'border-b-2 border-[#E2511A]' : ''}`}
-                            onClick={() => handleLinkClick('joblisting')}
+                            className={`cursor-pointer text-lg hover:text-[#E2511A] ${selectedLink === 'finances' ? 'border-b-2 border-[#E2511A]' : ''}`}
+                            onClick={() => handleLinkClick('finances')}
                         >
-                            <Link to='/joblisting'>Find Jobs</Link>
+                            <Link to='/finances'>Finances</Link>
                         </li>
                         <li
-                            className={`cursor-pointer text-lg hover:text-[#98B1C5] ${selectedLink === 'freelancerlist' ? 'border-b-2 border-[#E2511A]' : ''}`}
-                            onClick={() => handleLinkClick('freelancerlist')}
+                            className={`cursor-pointer text-lg hover:text-[#E2511A] ${selectedLink === 'resources' ? 'border-b-2 border-[#E2511A]' : ''}`}
+                            onClick={() => handleLinkClick('resources')}
                         >
-                            <Link to='/freelancerlist'>Find Freelancer</Link>
+                            <Link to='/resources'>Resources</Link>
                         </li>
                     </>
                 ) : (
                     <>
                         <li
-                            className={`cursor-pointer text-lg hover:text-[#98B1C5]`}
+                            className={`cursor-pointer text-lg hover:text-[#E2511A]`}
                             onClick={() => handleLinkClick('dashboard')}
                         >
                             <Link to='/'>Dashboard</Link>
                         </li>
                         <li
-                            className={`cursor-pointer text-lg hover:text-[#98B1C5]`}
-                            onClick={() => handleLinkClick('joblisting')}
+                            className={`cursor-pointer text-lg hover:text-[#E2511A]`}
+                            onClick={() => handleLinkClick('finances')}
                         >
-                            <Link to='/'>Find Jobs</Link>
+                            <Link to='/'>Finances</Link>
                         </li>
                         <li
-                            className={`cursor-pointer text-lg hover:text-[#98B1C5]`}
-                            onClick={() => handleLinkClick('freelancerlist')}
+                            className={`cursor-pointer text-lg hover:text-[#E2511A]`}
+                            onClick={() => handleLinkClick('resources')}
                         >
-                            <Link to='/'>Find Freelancer</Link>
+                            <Link to='/'>Resources</Link>
                         </li>
                     </>
                 )}
@@ -86,7 +89,7 @@ function Navbar() {
 
             <div className="flex gap-4 items-center">
                 <button
-                    className={`p-2 rounded-full border-2 ${theme === 'dark' ? 'border-[#CCCCCC] text-white' : 'border-[#2F4D6F] text-black'}`}
+                    className={`p-2 rounded-full border-2 border-black text-black`}
                     onClick={toggleTheme}
                 >
                     {theme === 'dark' ? <FaSun /> : <FaMoon />}

@@ -4,14 +4,14 @@ import { useTheme } from '../Context/ThemeContext';
 function Herosection() {
   const { theme } = useTheme();
   const sectionRef = useRef(null);
-  const [freelancers, setFreelancers] = useState(0);
-  const [jobs, setJobs] = useState(0);
+  const [users, setUsers] = useState(0);
+  const [tools, setTools] = useState(0);
   const [projects, setProjects] = useState(0);
-  const [animated, setAnimated] = useState(false); // Ensures animation runs only once
+  const [animated, setAnimated] = useState(false);
 
   const animateNumber = (target, setter) => {
     let start = 0;
-    const increment = Math.ceil(target / 100); // Smooth animation
+    const increment = Math.ceil(target / 100);
     const interval = setInterval(() => {
       start += increment;
       if (start >= target) {
@@ -20,18 +20,17 @@ function Herosection() {
       } else {
         setter(start);
       }
-    }, 10);
+    }, 15);
   };
 
-  // Trigger animation when section enters viewport
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !animated) {
-          animateNumber(3000, setFreelancers);
-          animateNumber(10000, setJobs);
-          animateNumber(5000, setProjects);
-          setAnimated(true); // Prevents re-triggering
+          animateNumber(5000, setUsers);
+          animateNumber(200, setTools);
+          animateNumber(8000, setProjects);
+          setAnimated(true);
         }
       },
       { threshold: 0.5 }
@@ -51,42 +50,43 @@ function Herosection() {
   return (
     <div
       ref={sectionRef}
-      className={`relative h-screen w-full ${theme === 'dark' ? 'bg-black' : 'bg-white'}`}
+      className="relative h-screen w-full bg-white"
     >
       <video autoPlay loop muted className="absolute top-0 left-0 w-full h-full object-cover">
-        <source src="/videos/herosection.mp4" type="video/mp4" />
+        <source src="/videos/hero_section.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
-      <div className="relative z-10 flex flex-col justify-center items-center h-full text-white text-center px-6 sm:px-12">
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold leading-tight">
-          Empowering Creativity,
+      {/* Further reduced overlay opacity for better visibility */}
+      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-75 z-0"></div>
+
+      <div className="relative z-10 flex flex-col justify-center items-center h-full text-center px-6 sm:px-12">
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-white drop-shadow-lg">
+          Supporting Gig Workers,
         </h1>
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold leading-tight">
-          One Connection at a
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-white drop-shadow-lg">
+          One Solution at a Time
         </h1>
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold leading-tight">Time</h1>
-        <p className="text-lg sm:text-xl mt-4">Find top talent or your next big project with ease</p>
+        <p className="text-lg sm:text-xl mt-4 text-[#E2511A] drop-shadow-lg">
+          A complete platform for financial stability, benefits, and growth.
+        </p>
 
         <div className="flex flex-col sm:flex-row gap-8 sm:gap-16 mt-8">
-          <StatBox count={freelancers} label="Freelancers" color="text-[#45b280]" />
-          <StatBox count={jobs} label="Jobs" color="text-[#FFA500]" />
-          <StatBox count={projects} label="Projects" color="text-[#45b280]" />
+          <StatBox count={users} label="Active Users" color="text-[#E2511A]" />
+          <StatBox count={tools} label="Available Tools" color="text-[#CCCCCC]" />
+          <StatBox count={projects} label="Managed Projects" color="text-[#FFFFFF]" />
         </div>
       </div>
-
-      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-60 z-0"></div>
     </div>
   );
 }
 
-// Reusable component for stats
 const StatBox = ({ count, label, color }) => (
   <div className="flex flex-col items-center">
-    <h2 className={`text-4xl sm:text-5xl md:text-6xl font-bold ${color}`}>
+    <h2 className={`text-4xl sm:text-5xl md:text-6xl font-bold ${color} drop-shadow-lg`}>
       {count.toLocaleString()}+
     </h2>
-    <p className="text-lg sm:text-xl">{label}</p>
+    <p className="text-lg sm:text-xl text-[#E2511A] drop-shadow-lg">{label}</p>
   </div>
 );
 
