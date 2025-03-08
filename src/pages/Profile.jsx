@@ -115,7 +115,7 @@ const MultiStepForm = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 px-6">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-100 via-white to-blue-100 px-6">
       <motion.div className="flex items-center mb-8">
         {steps.map((step, index) => (
           <div key={step} className="flex items-center">
