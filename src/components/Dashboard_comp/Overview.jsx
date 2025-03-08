@@ -120,7 +120,7 @@ const Overview = ({ handlepage, page }) => {
           <Drawer anchor="left" open={open} onClose={toggleDrawer(false)}>
             {DrawerList}
           </Drawer>
-          <img src="/images/yashavatar.png" alt="Avatar" className='rounded-full h-10' />
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUAb1r5jl0fbcSTY0XUJL6_r1V-Gzn3Nh4Yw&s" alt="Avatar" className='rounded-full h-10' />
           <h1 className='text-2xl font-bold hidden md:block'>Yash Rawat</h1>
         </div>
         <div className='flex items-center gap-4 md:w-[30%] justify-evenly'>
@@ -131,8 +131,8 @@ const Overview = ({ handlepage, page }) => {
             {theme === 'dark' ? <FaSun /> : <FaMoon />}
           </button>
           <FontAwesomeIcon icon={faBell} className='text-xl hidden md:block' />
-          <span className='text-black font-semibold text-lg bg-gradient-to-r from-[#F28C56] to-[#E2511A] px-3 py-2 rounded-lg'>
-            <Link to={'/joblisting'}>+ Find a Job</Link>
+          <span className='text-white font-semibold text-lg bg-gradient-to-r from-[#E2511A] to-[#E2511A] px-3 py-2 rounded-lg'>
+            <Link to={'/joblisting'}>+ Explore Gigs</Link>
           </span>
         </div>
       </div>
@@ -141,7 +141,7 @@ const Overview = ({ handlepage, page }) => {
 
       {/* numeric data */}
       <motion.div
-        className=' grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 bg-gradient-to-r from-[#F28C56] to-[#E2511A] p-4 rounded-lg'
+        className=' grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 bg-gradient-to-r from-[#808080] to-[#000000] p-4 rounded-lg'
         initial="hidden"
         animate="show"
         variants={{
@@ -174,8 +174,8 @@ const Overview = ({ handlepage, page }) => {
 
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-5'>
         {/* BarChart */}
-        <div className='w-full border-[2px] border-[#E2511A] p-3 rounded-lg shadow-xl'>
-          <h1 className={`font-bold text-xl mb-3 ${theme === 'dark' ? 'text-[#CDCDCD]' : ''}`}>Revenue Growth</h1>
+        <div className='w-full border-[2px] border-black p-3 rounded-lg shadow-xl'>
+          <h1 className={`font-bold text-xl mb-3 ${theme === 'dark' ? 'text-[#CDCDCD]' : ''}`}>Gig Activity Over Time</h1>
           <ResponsiveContainer width="100%" height={250}>
             <BarChart data={paymentsData}>
               <CartesianGrid strokeDasharray="3 3" />
@@ -187,14 +187,14 @@ const Overview = ({ handlepage, page }) => {
                 tick={{ fontSize: 14, fontWeight: 'bold' }}
               />
               <Tooltip />
-              <Bar dataKey="amount" fill="#E2511A" radius={[10, 10, 0, 0]} />
+              <Bar dataKey="gigCount" fill="#E2511A" radius={[10, 10, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
 
         {/* PieCharts */}
-        <div className='w-full border-[2px] py-3 px-3 border-[#E2511A] rounded-lg shadow-xl'>
-          <h1 className={`font-bold text-xl mb-3 ${theme === 'dark' ? 'text-[#CDCDCD]' : ''}`}>Proposal Success Rate</h1>
+        <div className='w-full border-[2px] py-3 px-3 border-black rounded-lg shadow-xl'>
+          <h1 className={`font-bold text-xl mb-3 ${theme === 'dark' ? 'text-[#CDCDCD]' : ''}`}>Gig Application Success Rate</h1>
           <ResponsiveContainer width="100%" height={250}>
             <PieChart>
               <Pie
@@ -216,7 +216,7 @@ const Overview = ({ handlepage, page }) => {
           </ResponsiveContainer>
         </div>
 
-        <div className='w-full border-[2px] py-3 px-3 border-[#E2511A] rounded-lg shadow-xl'>
+        <div className='w-full border-[2px] py-3 px-3 border-black rounded-lg shadow-xl'>
           <h1 className={`font-bold text-xl mb-3 ${theme === 'dark' ? 'text-[#CDCDCD]' : ''}`}>Top Category</h1>
           <ResponsiveContainer width="100%" height={250}>
             <PieChart>
@@ -243,7 +243,7 @@ const Overview = ({ handlepage, page }) => {
       <div className='my-6 grid grid-cols-1 lg:grid-cols-2 gap-4'>
         {/* Top Clients */}
         <div className='w-full'>
-          <h1 className={`${theme === 'dark' ? 'text-[#CDCDCD]' : ''} font-bold text-xl mb-2`}>Top Clients</h1>
+          <h1 className={`${theme === 'dark' ? 'text-[#CDCDCD]' : ''} font-bold text-xl mb-2`}>Top Gig Platforms</h1>
           <div className='flex w-full justify-between border-[2px] border-[#B2B2B2] p-2 rounded-xl'>
             {clients.map((item, index) => (
               <div key={index} className='flex flex-col items-center'>

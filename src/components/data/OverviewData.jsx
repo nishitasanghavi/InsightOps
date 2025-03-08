@@ -1,30 +1,30 @@
 import { FaBriefcase, FaClock, FaFileInvoice, FaUserPlus } from 'react-icons/fa';
 
 export const paymentsData = [
-  { month: 'Jan', amount: 2000 },
-  { month: 'Feb', amount: 3000 },
-  { month: 'Mar', amount: 4000 },
-  { month: 'Apr', amount: 7000 },
-  { month: 'May', amount: 5000 },
-  { month: 'Jun', amount: 11000 },
-  { month: 'Jul', amount: 3000 },
-  { month: 'Aug', amount: 5500 },
-  { month: 'Sep', amount: 10000 },
-  { month: 'Oct', amount: 4000 },
-  { month: 'Nov', amount: 12000 },
-  { month: 'Dec', amount: 13000 },
+    { month: 'January', gigCount: 15 },
+    { month: 'February', gigCount: 20 },
+    { month: 'March', gigCount: 25 },
+    { month: 'April', gigCount: 30 },
+    { month: 'May', gigCount: 35 },
+    { month: 'June', gigCount: 40 },
+    { month: 'July', gigCount: 50 },
+    { month: 'August', gigCount: 45 },
+    { month: 'September', gigCount: 55 },
+    { month: 'October', gigCount: 60 },
+    { month: 'November', gigCount: 70 },
+    { month: 'December', gigCount: 80 },
 ];
 
 export const proposalData = [
-  { name: 'Accepted', value: 78, color: '#008000' },
-  { name: 'Pending', value: 12, color: '#FFA500' },
-  { name: 'Rejected', value: 10, color: '#000000' },
+    { name: 'Hired', value: 78, color: '#E2511A' },  // Hired in Orange
+    { name: 'Pending', value: 12, color: '#CCCCCC' }, // Pending in Grey
+    { name: 'Rejected', value: 10, color: '#000000' }, // Rejected in Black
 ];
 
 export const categoryData = [
-  { name: 'Graphic Designing', value: 45, color: '#008000' },
-  { name: 'Development', value: 30, color: '#000000' },
-  { name: 'Content Writing', value: 25, color: '#FFA500' },
+    { name: 'Delivery', value: 45, color: '#E2511A' },  // Delivery in Orange
+  { name: 'Writing', value: 30, color: '#CCCCCC' },    // Writing in Grey
+  { name: 'Design', value: 25, color: '#000000' },     // Design in Black
 ];
 
 export const details = [
@@ -56,26 +56,12 @@ export const details = [
 
 
 export const clients = [
-  {
-    name: 'Soham',
-    img:'/images/soham.jpeg'
-  },
-  {
-    name: 'Shravani',
-    img:'/images/shravani.jpeg'
-  },
-  {
-    name: 'Jheel',
-    img:'/images/jheel.jpeg'
-  },
-  {
-    name: 'Juii',
-    img:'/images/juii.jpeg'
-  },
-  {
-    name: 'Mridula',
-    img:'/images/mridula.jpeg'
-  },
+    { name: 'Upwork', img: '/images/upwork-logo.png' },   // Replace with the correct image URL
+    { name: 'Fiverr', img: '/images/fiverr-logo.png' },
+    { name: 'TaskRabbit', img: '/images/taskrabbit-logo.png' },
+    { name: 'Freelancer', img: '/images/freelancer-logo.png' },
+    { name: 'Toptal', img: '/images/toptal-logo.png' },   // New platform added
+    { name: 'Guru', img: '/images/guru-logo.png' },
   
 ]
 
