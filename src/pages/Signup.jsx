@@ -53,7 +53,7 @@ function Signup() {
           title: 'Account Created',
           text: 'Your account has been created successfully!',
         }).then(() => {
-          navigate('/login', { replace: true });
+          navigate('/profile', { replace: true }); // Redirecting to the Profile page
         });
       }
     }
